@@ -1,4 +1,4 @@
-from google.generativeai import genai
+import google.generativeai as genai
 from config.settings import Config
 
 c = Config()
