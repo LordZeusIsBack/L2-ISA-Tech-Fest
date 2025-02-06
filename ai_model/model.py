@@ -13,7 +13,7 @@ class AIModel:
         self.chat_history = []
     
     def start_chat_session(self):
-        return self.model.start_chat(history=[self.chat_history])
+        return self.model.start_chat(history=self.chat_history)
 
     def add_to_history(self, prompt, response):
         self.chat_history.append({"role": "user", "parts": [prompt]})
