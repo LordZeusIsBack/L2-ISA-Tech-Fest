@@ -58,6 +58,6 @@ st.markdown('<div class="edgy-subheader">Show your skills and outsmart the machi
 
 st.write("Welcome to the ultimate showdown against AI. Prepare for battle in our competition!")
 
-if st.button("Join the Challenge", key="join"):
+if st.button("Join the Challenge", key="join", help="Click to join the event"):
     st.switch_page("pages/LLM_Interface.py")
 

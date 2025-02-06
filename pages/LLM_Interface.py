@@ -1,9 +1,19 @@
 import streamlit as st
 
-st.set_page_config(page_title="LLM Interface", layout="wide")
+st.set_page_config(
+    page_title="LLM Interface",
+    layout="wide",
+    initial_sidebar_state="collapsed"  # This collapses the sidebar by default.
+)
 
-st.markdown('<div style="font-family: Montserrat, sans-serif; font-size: 2.5em; color: #ff4d4d; text-align: center;">LLM Interface</div>', unsafe_allow_html=True)
-st.markdown('<div style="font-family: Roboto, sans-serif; font-size: 1.2em; color: #e0e0e0; text-align: center; margin-bottom: 40px;">Enter your prompt and see the magic happen!</div>', unsafe_allow_html=True)
+st.markdown(
+    '<div style="font-family: Montserrat, sans-serif; font-size: 2.5em; color: #ff4d4d; text-align: center;">LLM Interface</div>',
+    unsafe_allow_html=True
+)
+st.markdown(
+    '<div style="font-family: Roboto, sans-serif; font-size: 1.2em; color: #e0e0e0; text-align: center; margin-bottom: 40px;">Enter your prompt and see the magic happen!</div>',
+    unsafe_allow_html=True
+)
 
 col1, col2 = st.columns(2)
 
