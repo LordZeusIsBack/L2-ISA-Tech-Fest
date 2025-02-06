@@ -34,7 +34,11 @@ def display_output_column(user_input):
         st.markdown("### Output")
         
         if st.button("Generate Response", key="generate_btn"):
-            response = generate_response(user_input)
+            with open("history.txt", "a") as f:
+                f.write(str({"role": "user", "parts": [user_input]}) + "\n")
+                print('Added first line in the text file')
+                response = generate_response(user_input)
+                f.write(str({"role": "model", "parts": [response]}) + "\n")
             st.text_area("LLM Response", value=response, height=300, key="response_output")
         else:
             st.text_area("LLM Response", value="The LLM response will appear here.", 
@@ -46,7 +50,6 @@ def generate_response(user_input):
     chat_session = ChatSession(ai_model)
     try:
         response = chat_session.send_prompt(user_input)
-        ai_model.add_to_history(user_input, response)
     except ValueError as e:
         print(f'{e} contacted')
         st.stop()

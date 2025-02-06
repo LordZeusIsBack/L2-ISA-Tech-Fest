@@ -1,4 +1,5 @@
 import streamlit as st
+import os
 
 def configure_page():
     """Sets up the page configuration and removes sidebar"""
@@ -76,6 +77,8 @@ def main_content():
     st.write("Welcome to the ultimate showdown against AI. Prepare for battle in our competition!")
     
     if st.button("Join the Challenge", key="join", help="Click to join the event"):
+        if os.path.exists('history.txt'): os.remove('history.txt')
+        with open('history.txt', 'w') as fp: pass
         st.switch_page("pages/LLM_Interface.py")
 
 def main():
