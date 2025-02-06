@@ -44,7 +44,9 @@ def generate_response(user_input):
     """Generates mock LLM response (Replace with actual model integration)"""
     ai_model = AIModel()
     chat_session = ChatSession(ai_model)
-    try: response = chat_session.send_prompt(user_input)
+    try:
+        response = chat_session.send_prompt(user_input)
+        ai_model.add_to_history(user_input, response)
     except ValueError as e:
         print(f'{e} contacted')
         st.stop()
