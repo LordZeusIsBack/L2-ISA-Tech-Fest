@@ -42,7 +42,16 @@ def display_output_column(user_input):
 
 def generate_response(user_input):
     """Generates mock LLM response (Replace with actual model integration)"""
-    return f"Simulated response based on your input: {user_input}"
+    ai_model = AIModel()
+    chat_session = ChatSession(ai_model)
+    try: response = chat_session.send_prompt(user_input)
+    except ValueError as e:
+        print(f'{e} contacted')
+        st.stop()
+    except TypeError as e:
+        print(f'{e} contacted')
+        st.stop()
+    else: return response
 
 def main():
     """Main function to orchestrate the app layout and functionality"""
