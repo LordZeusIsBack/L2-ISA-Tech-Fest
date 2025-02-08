@@ -17,7 +17,7 @@ class AIModel:
     def _load_chat_history(self, file_path='history.txt'):
         history = []
         with open(file_path, 'r') as fp:
-                for line in fp: [literal_eval(line.strip()) for line in fp]
+                for line in fp: history = [literal_eval(line.strip()) for line in fp]
         return history
 
     def _load_attempts(self, file_path='attempts.txt'):
