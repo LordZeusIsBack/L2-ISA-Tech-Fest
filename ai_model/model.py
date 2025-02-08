@@ -15,23 +15,15 @@ class AIModel:
         self.attempts = self._load_attempts()  # Load attempts count from file
 
     def _load_chat_history(self, file_path='history.txt'):
-        """Load previous chat history from a file."""
         history = []
-        if os.path.exists(file_path):
-            with open(file_path, 'r') as fp:
-                for line in fp:
-                    history.append(literal_eval(line.strip()))
+        with open(file_path, 'r') as fp:
+                for line in fp: [literal_eval(line.strip()) for line in fp]
         return history
 
     def _load_attempts(self, file_path='attempts.txt'):
         """Load attempts count from a file."""
-        if os.path.exists(file_path):
-            with open(file_path, 'r') as fp:
-                try:
-                    return int(fp.read().strip())
-                except ValueError:
-                    return 0
-        return 0  # Default to 0 if file doesn't exist
+        with open(file_path, 'r') as fp:
+            return int(fp.read().strip())
 
     def _save_attempts(self, file_path='attempts.txt'):
         """Save the current attempts count to a file."""
@@ -53,4 +45,4 @@ class AIModel:
         else:
             self.attempts += 1
 
-        self._save_attempts()  # Save new value
+        self._save_attempts()
