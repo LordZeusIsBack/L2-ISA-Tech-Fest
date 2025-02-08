@@ -78,7 +78,9 @@ def main_content():
     
     if st.button("Join the Challenge", key="join", help="Click to join the event"):
         if os.path.exists('history.txt'): os.remove('history.txt')
+        if os.path.exists('attempts.txt'): os.remove('attempts.txt')
         with open('history.txt', 'w') as fp: pass
+        with open('attempts.txt', 'w') as fp: fp.write(str(0))
         st.switch_page("pages/LLM_Interface.py")
 
 def main():
