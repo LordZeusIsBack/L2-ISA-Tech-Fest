@@ -1,10 +1,8 @@
 import os
-from dotenv import load_dotenv
 
 class Config:
     def __init__(self):
-        load_dotenv()
-        self.API_KEY = os.getenv('GOOGLE_API_KEY')
+        self.API_KEY = os.getenv('AIzaSyCuA-uTSvuk4IHZRTi4EAl_EZizCzwP3rs')
         self.GENERATION_CONFIGURATION = {
             "temperature": 0.75,
             "top_p": 0.95,
