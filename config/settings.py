@@ -2,7 +2,7 @@ import os
 
 class Config:
     def __init__(self):
-        self.API_KEY = os.getenv('AIzaSyCuA-uTSvuk4IHZRTi4EAl_EZizCzwP3rs')
+        self.API_KEY = os.getenv('AIzaSyC4XsIDXOhn6SPi2tWu57XWBdxvw9cDfCc')
         self.GENERATION_CONFIGURATION = {
             "temperature": 0.75,
             "top_p": 0.95,
