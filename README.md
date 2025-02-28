@@ -1,5 +1,5 @@
 # L2 ISA Tech Fest
-<img src="https://envs.sh/yCM.png" alt="IntellexAI Student Association Logo" width="200" />
+<img src="https://envs.sh/ipS.png" alt="IntellexAI Student Association Logo" width="200" />
 
 ## Table of Contents
 
